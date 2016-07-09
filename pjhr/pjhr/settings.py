@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w^murild2b5$b#%x6m3e3f79a4bdo7u(+gm6g!$eajzsjpqg-#'
+SECRET_KEY = 'password'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'erp'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'pjhr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'erp-hr',
+        'USER': 'sa',
+        'PASSWORD': 'password',
+        'HOST': '',
+        'PORT': '',  #default 3306
     }
 }
 
